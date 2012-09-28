@@ -23,10 +23,6 @@
 //Function for getting the current system time
 RTC_Millis RTC;
 
-//Count variables
-int i=0;
-int j=0;
-
 // Pin connected to ST_CP (pin 12) of 74HC595
 int latchPin = 8;
 
@@ -290,61 +286,3 @@ void displayDigitFour() {
         digitalWrite(latchPin, HIGH);
  
 }
-
-/* Simple function for setting the output via the serial monitor
-Currently not being called in the main program - add it to the 
-loop function of you wish to all it.
-*/
-
-void updateSegmentValueSerial(){
-if (Serial.available() > 0) {
-	// read the incoming byte:
-	j = Serial.read();
-	// say what you got:
-	Serial.print("Serial Data received: ");
-	Serial.println(j);
-        
-              if (j == '0' || j == '0')
-              
-              {
-                i=0;
-              }   
-              else if (j == '1' || j == '!')
-              {
-                i=1; 
-              }
-              else if (j == '2' || j == '@')
-              {
-                i=2;
-              }
-              else if (j == '3' || j == '#')
-              {
-                i=3;
-              }
-              else if (j == '4' || j == '$')
-              {
-                i=4;
-              }
-              else if (j == '5' || j == '%')
-              {
-                i=5;
-              }
-              else if (j == '6' || j == '^')
-              {
-                i=6;
-              }
-              else if (j == '7' || j == '&')
-              {
-                i=7;
-              }
-              else if (j == '8' || j == '*')
-              {
-                i=8;
-              }
-              else if (j == '9' || j == '(')
-              {
-                i=9;
-              }
-      }               
-}
-
